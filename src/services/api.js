@@ -135,4 +135,14 @@ export const eventsAPI = {
   },
 };
 
-export { getToken, setToken, removeToken };
+// Check if user is authenticated
+const isAuthenticated = () => {
+  return !!getToken();
+};
+
+// Logout user
+const logout = () => {
+  removeToken();
+};
+
+export { getToken, setToken, removeToken, isAuthenticated, logout };
