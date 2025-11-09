@@ -1,39 +1,105 @@
-## React
+# Geofence Notification System - Frontend
 
-This is a simple React application. This application serves as a basic template for a react applications.  
-This project is bootstrapped with [Vite](https://vitejs.dev/guide/).
+## Overview
+A modern React-based geofencing frontend application for real-time location tracking and geofence management using Leaflet maps and JWT authentication.
 
-## How to run
+## Features
+- **Authentication**: Secure login with JWT tokens
+- **Map Display**: Interactive maps powered by Leaflet
+- **Geofence Management**: Create, view, and delete geofences
+- **Location Tracking**: Real-time GPS location tracking
+- **Location History**: Track entry/exit events for geofences
+- **Responsive Design**: Works on desktop and mobile devices
 
-1. Before running the application, make sure all dependencies are installed. To install dependencies, run following command in terminal:
+## Tech Stack
+- React 18+ with Hooks
+- Vite (Fast build tool)
+- Leaflet & React-Leaflet (Interactive maps)
+- JWT Authentication
+- ES6+ JavaScript
 
-   ```sh
-   npm install
-   ```
+## Installation
 
-2. Once dependencies are installed, run the following command to start the application:
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/geofence-notification-frontend.git
+cd geofence-notification-frontend
 
-   ```sh
-   npm run dev
-   ```
+# Install dependencies
+npm install
 
-3. Refresh the URL in simple browser to see the output.
+# Install map dependencies
+npm install leaflet react-leaflet
+```
 
-## FAQs & Debugging
+## Development
 
-### 1. I do not see browser in my workspace
+```bash
+# Start development server
+npm run dev
 
-Studio will automatically open the app in a new browser tab. If not, you can use the following steps to open the simple browser
+# Server runs on http://localhost:3000
+```
 
-1. From VS Code command pallette(`Ctrl/Cmd + Shift + P`), run **Studio Manager: SimpleBrowser Default URL** command. This will open the app in a new browser tab.
+## Build for Production
 
-2. Your app runs on hosted env which can be accessed using host id, port provided in file **.vscode/.studio/studio-env.json**. Use values to create the URL as follows:
-   `https://<STUDIO_HOST_ID>-3000.<STUDIO_DOMAIN>`
+```bash
+# Build the project
+npm run build
 
-### 2. Getting `vite: not found` error
+# Preview production build
+npm run preview
+```
 
-This means node_modules are missing in your workspace, please refer the 'How to run' section and make sure you have followed the steps in sequence
+## Project Structure
 
-### 3. Can I use create-react-app instead Vite?
+```
+src/
+├── components/
+│   ├── Login.jsx              # Authentication component
+│   ├── GeoMap.jsx             # Map display component
+│   ├── GeofenceCreator.jsx    # Create geofences
+│   ├── LocationTracker.jsx    # GPS tracking
+│   └── GeofenceList.jsx       # Manage geofences
+├── services/
+│   └── api.js                 # Backend API integration
+├── utils/
+│   └── geofenceUtils.js       # Utility functions
+├── App.jsx                    # Main app component
+└── index.css
+```
 
-Yes, you can use create-react-app instead Vite, the default workspace is loaded with Vite setup, you can remove the Vite dependencies, add create-react-app dependencies and update the scripts to start using create-react-app.
+## Configuration
+
+### Backend API
+Update the API base URL in `src/services/api.js`:
+- Development: `http://localhost:3001`
+- Production: `https://api.geofencenotify.com`
+
+### Credentials
+Default test credentials:
+- Email: `adminsatyam@gmail.com`
+- Password: `@Satyam4653`
+
+## API Endpoints
+
+The application communicates with the backend API:
+
+- `POST /api/login` - User authentication
+- `GET /api/geofences` - List all geofences
+- `POST /api/geofences` - Create geofence
+- `DELETE /api/geofences/:id` - Delete geofence
+- `POST /api/locations` - Send location
+- `GET /api/events` - Get entry/exit events
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests.
+
+## License
+
+MIT License - see LICENSE file for details
+
+## Contact
+
+For questions or support, contact: developer@geofence.com
