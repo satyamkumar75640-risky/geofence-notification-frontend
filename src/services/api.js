@@ -57,7 +57,7 @@ export const authAPI = {
   login: async (username, password) => {
     const response = await apiRequest('/api/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email: username, password }),
     });
     
     if (response.token) {
