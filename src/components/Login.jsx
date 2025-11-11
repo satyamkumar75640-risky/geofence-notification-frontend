@@ -151,7 +151,7 @@ function Login({ onLoginSuccess }) {
           color: '#999',
           fontSize: '14px'
         }}>
-          Demo: adminsatyam@gmail.com / @Satyam4653
+        
         </p>
       </div>
     </div>
